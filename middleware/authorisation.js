@@ -11,7 +11,9 @@ exports.authenticate = async (req, res, next) => {
     const decoded = jwt.verify(token, secretKey);
     const userId = decoded.userId;
 
-    const user = await User.findByPk(userId);
+    //const user = await User.findByPk(userId); - used in sequeslize only
+    const user = await User.findById(userId);
+
     if (!user) {
       return res.status(401).json({ message: "Unauthorized: User not found" });
     }

@@ -5,8 +5,8 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user');
 const Password = require('../models/password');
 
-User.hasMany(Password);
-Password.belongsTo(User);
+// User.hasMany(Password);
+// Password.belongsTo(User);
 
 exports.forgotPassword = async (req, res, next) => {
   try {

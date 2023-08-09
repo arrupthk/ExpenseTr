@@ -1,7 +1,4 @@
-
-
 const AWS = require('aws-sdk')
-
 
 function uploadToS3(data, filename) {
     return new Promise((resolve, reject) => {
